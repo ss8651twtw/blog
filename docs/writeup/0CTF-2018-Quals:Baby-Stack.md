@@ -4,7 +4,7 @@
 >
 > Category: Pwn
 >
-> Writeup: []()
+> Writeup: https://ss8651twtw.github.io/writeup/0CTF-2018-Quals:Baby-Stack/
 >
 
 Info leak is no longer required to exploit a stack overflow in 2018.
