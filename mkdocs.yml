@@ -1,0 +1,42 @@
+# Project Information
+site_name: HackNote
+site_description: Take a note about hacking.
+site_author: ss8651twtw
+site_url: https://ss8651twtw.github.io/
+
+# Repository
+repo_name: 'ss8651twtw/ss8651twtw'
+repo_url: 'https://github.com/ss8651twtw/ss8651twtw'
+edit_uri: 'blob/master/docs/'
+
+# Contents
+pages:
+    - Home: index.md
+    - Writeup:
+        - 2018:
+            - 0CTF-2018-Quals:Baby-Stack: writeup/0CTF-2018-Quals:Baby-Stack.md
+
+# Theme
+theme:
+    name: 'material'
+    palette:
+        primary: 'blue-grey'
+    feature:
+        tabs: true
+
+# Customization
+extra_javascript:
+    - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+
+# Extensions
+markdown_extensions:
+    - pymdownx.arithmatex
+    - pymdownx.caret
+    - pymdownx.critic
+    - pymdownx.details
+    - pymdownx.inlinehilite
+    - pymdownx.magiclink
+    - pymdownx.mark
+    - pymdownx.smartsymbols
+    - pymdownx.superfences
+    - pymdownx.tilde
