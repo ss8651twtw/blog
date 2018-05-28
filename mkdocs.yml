@@ -2,12 +2,15 @@
 site_name: HackNote
 site_description: Take a note about hacking.
 site_author: ss8651twtw
-site_url: https://ss8651twtw.github.io/
+site_url: https://ss8651twtw.github.io/blog
 
 # Repository
-repo_name: 'ss8651twtw/ss8651twtw'
+repo_name: 'ss8651twtw/blog'
 repo_url: 'https://github.com/ss8651twtw/blog'
 edit_uri: 'blob/master/docs/'
+
+# Google analytics
+google_analytics: ['UA-119880828-1', 'ss8651twtw.github.io/blog']
 
 # Contents
 pages:
