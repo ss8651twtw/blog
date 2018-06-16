@@ -15,6 +15,8 @@ google_analytics: ['UA-119880828-1', 'ss8651twtw.github.io/blog']
 # Contents
 pages:
     - Home: index.md
+    - Note:
+        - Build libc with debug info: note/build-libc-with-debug-info.md
     - Writeup:
         - 2018:
             - 0CTF-2018-Quals:Baby-Stack: writeup/0CTF-2018-Quals:Baby-Stack.md
