@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
     <url>
      <loc>https://ss8651twtw.github.io/blog/</loc>
-     <lastmod>2018-05-28</lastmod>
+     <lastmod>2018-06-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
     <url>
-     <loc>https://ss8651twtw.github.io/blog</loc>
-     <lastmod></lastmod>
+     <loc>https://ss8651twtw.github.io/blog/note/build-libc-with-debug-info/</loc>
+     <lastmod>2018-06-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
+    <url>
+     <loc>https://ss8651twtw.github.io/blog/writeup/0CTF-2018-Quals:Baby-Stack/</loc>
+     <lastmod>2018-06-16</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
 </urlset>
