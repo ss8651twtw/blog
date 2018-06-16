@@ -527,7 +527,7 @@ tar zxvf glibc-2.23.tar.gz
 </pre></div>
 
 <h2 id="configure-and-build">Configure and build</h2>
-<p>進入 glibc 資料夾中並新增一個 build 的資料夾供編譯使用</p>
+<p>進入 glibc-2.23 資料夾中並新增一個 build 的資料夾供編譯使用</p>
 <div class="highlight"><pre><span></span><span class="nb">cd</span> glibc-2.23
 mkdir build
 </pre></div>
@@ -567,7 +567,8 @@ make install -j4
 </ul>
 </li>
 </ul>
-<p><code>CC='gcc -m32' CFLAGS='-g3 -ggdb3 -gdwarf-4 -Og -Wno-error --host=i686-linux-gnu --bulid=i686-linux-gnu' ../configure --prefix=/home/`whoami`/glibc</code></p>
+<div class="highlight"><pre><span></span><span class="nv">CC</span><span class="o">=</span><span class="s1">&#39;gcc -m32&#39;</span> <span class="nv">CFLAGS</span><span class="o">=</span><span class="s1">&#39;-g3 -ggdb3 -gdwarf-4 -Og -Wno-error --host=i686-linux-gnu --bulid=i686-linux-gnu&#39;</span> ../configure --prefix<span class="o">=</span>/home/<span class="sb">`</span>whoami<span class="sb">`</span>/glibc
+</pre></div>
                 
                   
                 
