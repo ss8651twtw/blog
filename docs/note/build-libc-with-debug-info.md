@@ -15,7 +15,7 @@ tar zxvf glibc-2.23.tar.gz
 
 ## Configure and build
 
-進入 glibc 資料夾中並新增一個 build 的資料夾供編譯使用
+進入 glibc-2.23 資料夾中並新增一個 build 的資料夾供編譯使用
 
 ```shell
 cd glibc-2.23
@@ -53,4 +53,6 @@ make install -j4
     - host=i686-linux-gnu
     - build=i686-linux-gnu
 
-```CC='gcc -m32' CFLAGS='-g3 -ggdb3 -gdwarf-4 -Og -Wno-error --host=i686-linux-gnu --bulid=i686-linux-gnu' ../configure --prefix=/home/`whoami`/glibc```
+```shell
+CC='gcc -m32' CFLAGS='-g3 -ggdb3 -gdwarf-4 -Og -Wno-error --host=i686-linux-gnu --bulid=i686-linux-gnu' ../configure --prefix=/home/`whoami`/glibc
+```
