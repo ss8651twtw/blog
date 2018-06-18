@@ -17,6 +17,7 @@ pages:
     - Home: index.md
     - Note:
         - Build libc with debug info: note/build-libc-with-debug-info.md
+        - Pwn tips: note/pwn-tips.md
     - Writeup:
         - 2018:
             - 0CTF-2018-Quals:Baby-Stack: writeup/0CTF-2018-Quals:Baby-Stack.md
