@@ -13,7 +13,7 @@
         <meta name="description" content="Take a note about hacking.">
       
       
-        <link rel="canonical" href="https://ss8651twtw.github.io/blog/">
+        <link rel="canonical" href="https://ss8651twtw.github.io/blog/note/pwn-tips/">
       
       
         <meta name="author" content="ss8651twtw">
@@ -37,18 +37,18 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="./assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-0.17.4, mkdocs-material-2.9.1">
     
     
       
-        <title>HackNote</title>
+        <title>Pwn tips - HackNote</title>
       
     
     
-      <link rel="stylesheet" href="./assets/stylesheets/application.ba0fd1a6.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.ba0fd1a6.css">
       
-        <link rel="stylesheet" href="./assets/stylesheets/application-palette.6079476c.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="./assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
       <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -66,7 +66,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="./assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
   </head>
@@ -104,7 +104,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#welcome-to-hacknote" tabindex="1" class="md-skip">
+      <a href="#pwn-tips" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -130,7 +130,7 @@
                 HackNote
               </span>
               <span class="md-header-nav__topic">
-                Home
+                Pwn tips
               </span>
             
           
@@ -202,14 +202,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="." title="Home" class="md-tabs__link md-tabs__link--active">
+      <a href="../.." title="Home" class="md-tabs__link">
         Home
       </a>
     
@@ -221,7 +223,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="note/build-libc-with-debug-info/" title="Note" class="md-tabs__link">
+        <a href="../build-libc-with-debug-info/" title="Note" class="md-tabs__link md-tabs__link--active">
           Note
         </a>
       
@@ -238,7 +240,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="writeup/0CTF-2018-Quals:Baby-Stack/" title="Writeup" class="md-tabs__link">
+        <a href="../../writeup/0CTF-2018-Quals:Baby-Stack/" title="Writeup" class="md-tabs__link">
           Writeup
         </a>
       
@@ -297,56 +299,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Home
-      </label>
-    
-    <a href="." title="Home" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
       Home
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#about-me" title="About me" class="md-nav__link">
-    About me
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contact" title="Contact" class="md-nav__link">
-    Contact
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -354,10 +311,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Note
@@ -375,7 +334,7 @@
 
 
   <li class="md-nav__item">
-    <a href="note/build-libc-with-debug-info/" title="Build libc with debug info" class="md-nav__link">
+    <a href="../build-libc-with-debug-info/" title="Build libc with debug info" class="md-nav__link">
       Build libc with debug info
     </a>
   </li>
@@ -385,11 +344,89 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="note/pwn-tips/" title="Pwn tips" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Pwn tips
+      </label>
+    
+    <a href="./" title="Pwn tips" class="md-nav__link md-nav__link--active">
       Pwn tips
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#before-pwn" title="Before Pwn" class="md-nav__link">
+    Before Pwn
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alarm" title="alarm" class="md-nav__link">
+    alarm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#link-libc-with-debug-info" title="link libc with debug info" class="md-nav__link">
+    link libc with debug info
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#patch-loader" title="patch loader 路徑的小技巧" class="md-nav__link">
+    patch loader 路徑的小技巧
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note" title="note" class="md-nav__link">
+    note
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -442,7 +479,7 @@
 
 
   <li class="md-nav__item">
-    <a href="writeup/0CTF-2018-Quals:Baby-Stack/" title="0CTF-2018-Quals:Baby-Stack" class="md-nav__link">
+    <a href="../../writeup/0CTF-2018-Quals:Baby-Stack/" title="0CTF-2018-Quals:Baby-Stack" class="md-nav__link">
       0CTF-2018-Quals:Baby-Stack
     </a>
   </li>
@@ -479,16 +516,49 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#about-me" title="About me" class="md-nav__link">
-    About me
+  <a href="#before-pwn" title="Before Pwn" class="md-nav__link">
+    Before Pwn
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#alarm" title="alarm" class="md-nav__link">
+    alarm
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#contact" title="Contact" class="md-nav__link">
-    Contact
+        
+          <li class="md-nav__item">
+  <a href="#link-libc-with-debug-info" title="link libc with debug info" class="md-nav__link">
+    link libc with debug info
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#patch-loader" title="patch loader 路徑的小技巧" class="md-nav__link">
+    patch loader 路徑的小技巧
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note" title="note" class="md-nav__link">
+    note
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -508,22 +578,30 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ss8651twtw/blog/blob/master/docs/index.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/ss8651twtw/blog/blob/master/docs/note/pwn-tips.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="welcome-to-hacknote">Welcome to HackNote</h1>
-<h2 id="about-me">About me</h2>
-<ul>
-<li>ss8651twtw</li>
-<li>BambooFox</li>
-<li>Pwn, Reverse</li>
-</ul>
-<h2 id="contact">Contact</h2>
-<ul>
-<li><a href="https://www.facebook.com/ss8651twtw">FaceBook</a></li>
-<li><a href="https://twitter.com/ss8651twtw">Twitter</a></li>
-</ul>
-<p><img alt="" src="https://bamboofox.cs.nctu.edu.tw/logo.png" /></p>
+                <h1 id="pwn-tips">Pwn tips</h1>
+<h2 id="before-pwn">Before Pwn</h2>
+<h3 id="alarm">alarm</h3>
+<p>如果有 <code>alarm</code> 做 timeout 且確定題目的洞不在 <code>alarm</code> 裡，可以將它 patch 成 <code>isnan</code></p>
+<ol>
+<li>把 binary 用 vim 打開</li>
+<li>將 <code>alarm</code> 的 function name 取代為 <code>isnan</code> 儲存</li>
+<li>完成</li>
+</ol>
+<h3 id="link-libc-with-debug-info">link libc with debug info</h3>
+<p>一般使用 gdb debug 的時候，進入 libc 的 function 中不會 symbol 等資訊。這樣比較難 debug 所以會希望可以 link 到一個有 debug info 的 libc</p>
+<ol>
+<li>參考 <a href="../build-libc-with-debug-info">Build libc with debug info</a> 先編出一個帶有 debug info 的 libc</li>
+<li>使用 <code>ldd &lt;binary&gt;</code> 查看 link 到的 loader</li>
+<li>將 loader 路徑 patch 成自己編的 loader 路徑</li>
+<li>完成</li>
+</ol>
+<h4 id="patch-loader">patch loader 路徑的小技巧</h4>
+<p>假設原本 loader 路徑為 <code>/lib64/ld-linux-x86-64.so.2</code>，可以先建一個 soft link <code>/lib64/ld_linux-x86-64.so.2</code> 指向自己編的 loader，接著只要把 binary loader 路徑中的 <code>ld-</code> 換成 <code>ld_</code> 即可</p>
+<h4 id="note">note</h4>
+<p>更換 loader 後他就會優先使用該目錄下的 libc，所以就可以 link 到有 debug info 的 libc 囉</p>
                 
                   
                 
@@ -544,14 +622,28 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
+          <a href="../build-libc-with-debug-info/" title="Build libc with debug info" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Build libc with debug info
+              </span>
+            </div>
+          </a>
         
-          <a href="note/build-libc-with-debug-info/" title="Build libc with debug info" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+        
+          <a href="../../writeup/0CTF-2018-Quals:Baby-Stack/" title="0CTF-2018-Quals:Baby-Stack" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Build libc with debug info
+                0CTF-2018-Quals:Baby-Stack
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -581,9 +673,9 @@
       
     </div>
     
-      <script src="./assets/javascripts/application.a59e2a89.js"></script>
+      <script src="../../assets/javascripts/application.a59e2a89.js"></script>
       
-      <script>app.initialize({version:"0.17.4",url:{base:"."}})</script>
+      <script>app.initialize({version:"0.17.4",url:{base:"../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
