@@ -15,6 +15,17 @@ google_analytics: ['UA-119880828-1', 'ss8651twtw.github.io/blog']
 # Contents
 pages:
     - Home: index.md
+    - Course:
+        - CSIE:
+            - Index: course/csie/index.md
+            - Practice: course/csie/practice.md
+            - Hw0: course/csie/hw0.md
+            - Hw1: course/csie/hw1.md
+            - Hw2: course/csie/hw2.md
+            - Hw3: course/csie/hw3.md
+            - Hw4: course/csie/hw4.md
+            - Hw5: course/csie/hw5.md
+            - Hw6: course/csie/hw6.md
     - Note:
         - Build libc with debug info: note/build-libc-with-debug-info.md
         - Pwn tips: note/pwn-tips.md
