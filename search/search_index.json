@@ -21,6 +21,61 @@
             "title": "Contact"
         },
         {
+            "location": "/course/csie/",
+            "text": "CSIE\n\n\n\u9019\u662f\u4e00\u9580\u53f0\u5927\u3001\u4ea4\u5927\u3001\u53f0\u79d1\u4e09\u6821\u5408\u8fa6\u7684\u7a0b\u5f0f\u5b89\u5168\u8ab2\u7a0b\uff0c\u8ab2\u7a0b\u5167\u5bb9\u6709\u53ef\u80fd\u96a8\u8457\u8001\u5e2b\u6216\u52a9\u6559\u4e0d\u540c\u800c\u6539\u8b8a\u3002106 \u4e0b\u5b78\u671f\u7684\u8ab2\u4e3b\u8981\u90fd\u662f Pwn \u548c Reverse \u5c45\u591a XD\n\n\n\u9019\u88e1\u6703\u7d00\u9304\u4e00\u4e0b\u6bcf\u9031\u7684\u4f5c\u696d\u548c\u7df4\u7fd2\u984c\u7684\u89e3\u984c\u65b9\u6cd5\u548c\u601d\u8def\uff0c\u4e5f\u6b61\u8fce\u5927\u5bb6\u767c issue \u8a0e\u8ad6\n\n\n\u984c\u76ee binary \u548c\u89e3\u984c script \u90fd\u53ef\u4ee5\u5728 \n\u9019\u88e1\n \u627e\u5230",
+            "title": "Index"
+        },
+        {
+            "location": "/course/csie/#csie",
+            "text": "\u9019\u662f\u4e00\u9580\u53f0\u5927\u3001\u4ea4\u5927\u3001\u53f0\u79d1\u4e09\u6821\u5408\u8fa6\u7684\u7a0b\u5f0f\u5b89\u5168\u8ab2\u7a0b\uff0c\u8ab2\u7a0b\u5167\u5bb9\u6709\u53ef\u80fd\u96a8\u8457\u8001\u5e2b\u6216\u52a9\u6559\u4e0d\u540c\u800c\u6539\u8b8a\u3002106 \u4e0b\u5b78\u671f\u7684\u8ab2\u4e3b\u8981\u90fd\u662f Pwn \u548c Reverse \u5c45\u591a XD  \u9019\u88e1\u6703\u7d00\u9304\u4e00\u4e0b\u6bcf\u9031\u7684\u4f5c\u696d\u548c\u7df4\u7fd2\u984c\u7684\u89e3\u984c\u65b9\u6cd5\u548c\u601d\u8def\uff0c\u4e5f\u6b61\u8fce\u5927\u5bb6\u767c issue \u8a0e\u8ad6  \u984c\u76ee binary \u548c\u89e3\u984c script \u90fd\u53ef\u4ee5\u5728  \u9019\u88e1  \u627e\u5230",
+            "title": "CSIE"
+        },
+        {
+            "location": "/course/csie/practice/",
+            "text": "Practice",
+            "title": "Practice"
+        },
+        {
+            "location": "/course/csie/practice/#practice",
+            "text": "",
+            "title": "Practice"
+        },
+        {
+            "location": "/course/csie/hw0/",
+            "text": "",
+            "title": "Hw0"
+        },
+        {
+            "location": "/course/csie/hw1/",
+            "text": "",
+            "title": "Hw1"
+        },
+        {
+            "location": "/course/csie/hw2/",
+            "text": "",
+            "title": "Hw2"
+        },
+        {
+            "location": "/course/csie/hw3/",
+            "text": "",
+            "title": "Hw3"
+        },
+        {
+            "location": "/course/csie/hw4/",
+            "text": "",
+            "title": "Hw4"
+        },
+        {
+            "location": "/course/csie/hw5/",
+            "text": "",
+            "title": "Hw5"
+        },
+        {
+            "location": "/course/csie/hw6/",
+            "text": "",
+            "title": "Hw6"
+        },
+        {
             "location": "/note/build-libc-with-debug-info/",
             "text": "Build libc with debug info\n\n\n\u672c\u6587\u4f7f\u7528\u74b0\u5883\u70ba 64 bit Ubuntu 16.04\n\n\nDownload source code\n\n\n\u7531 \nThe GNU C Library (glibc)\n \u5b98\u65b9\u7db2\u7ad9\u4e0b\u8f09 glibc source code\uff0c\u4ee5 glibc 2.23 \u70ba\u4f8b\n\n\n\u4e0b\u8f09 glibc 2.23 \u4e26\u89e3\u58d3\u7e2e\n\n\nwget https://ftp.gnu.org/gnu/libc/glibc-2.23.tar.gz\ntar zxvf glibc-2.23.tar.gz\n\n\n\n\nConfigure and build\n\n\n\u9032\u5165 glibc-2.23 \u8cc7\u6599\u593e\u4e2d\u4e26\u65b0\u589e\u4e00\u500b build \u7684\u8cc7\u6599\u593e\u4f9b\u7de8\u8b6f\u4f7f\u7528\n\n\ncd\n glibc-2.23\nmkdir build\n\n\n\n\n\u9032\u5165 build \u8cc7\u6599\u593e\u4e26\u8a2d\u5b9a\u7de8\u8b6f\u53c3\u6578\n\n\n\n\nCFLAGS\n\n\ndebug \u9078\u9805\u5168\u958b\u4e26\u76e1\u91cf\u4e0d\u8981\u505a\u512a\u5316\n\n\n\u53ef\u53c3\u8003\u4ee5\u4e0b\u7bc4\u4f8b\n\n\n\n\n\n\nprefix\n\n\n\u7de8\u8b6f\u5b8c\u6a94\u6848\u6240\u653e\u4f4d\u7f6e\n\n\n\u7bc4\u4f8b\u70ba\u653e\u7f6e\u5bb6\u76ee\u9304\u4e0b\u7684 glibc \u8cc7\u6599\u593e\u5167\n\n\n\n\n\n\n\n\ncd\n build\n\nCFLAGS\n=\n'-g3 -ggdb3 -gdwarf-4 -Og -Wno-error'\n ../configure --prefix\n=\n/home/\n`\nwhoami\n`\n/glibc\n\n\n\n\n\u7de8\u8b6f\u4e26\u5b89\u88dd\n\n\nmake -j4\nmake install -j4\n\n\n\n\nNote\n\n\n\u7de8\u8b6f 32 bit \u7248\u672c\u7684 glibc\n\n\n\n\nCC\n\n\ngcc -m32\n\n\n\n\n\n\nCFLAGS\n\n\nhost=i686-linux-gnu\n\n\nbuild=i686-linux-gnu\n\n\n\n\n\n\n\n\nCC\n=\n'gcc -m32'\n \nCFLAGS\n=\n'-g3 -ggdb3 -gdwarf-4 -Og -Wno-error --host=i686-linux-gnu --bulid=i686-linux-gnu'\n ../configure --prefix\n=\n/home/\n`\nwhoami\n`\n/glibc",
             "title": "Build libc with debug info"

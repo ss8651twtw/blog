@@ -13,7 +13,7 @@
         <meta name="description" content="Take a note about hacking.">
       
       
-        <link rel="canonical" href="https://ss8651twtw.github.io/blog/note/build-libc-with-debug-info/">
+        <link rel="canonical" href="https://ss8651twtw.github.io/blog/course/csie/hw5/">
       
       
         <meta name="author" content="ss8651twtw">
@@ -37,18 +37,18 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-0.17.4, mkdocs-material-2.9.1">
     
     
       
-        <title>Build libc with debug info - HackNote</title>
+        <title>Hw5 - HackNote</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.ba0fd1a6.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.ba0fd1a6.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.6079476c.css">
       
       
         
@@ -57,7 +57,7 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
       <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -66,7 +66,7 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
     
     
   </head>
@@ -104,10 +104,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#build-libc-with-debug-info" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -130,7 +126,7 @@
                 HackNote
               </span>
               <span class="md-header-nav__topic">
-                Build libc with debug info
+                Hw5
               </span>
             
           
@@ -211,7 +207,7 @@
         
   <li class="md-tabs__item">
     
-      <a href="../.." title="Home" class="md-tabs__link">
+      <a href="../../.." title="Home" class="md-tabs__link">
         Home
       </a>
     
@@ -227,7 +223,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../course/csie/" title="Course" class="md-tabs__link">
+        <a href="../" title="Course" class="md-tabs__link md-tabs__link--active">
           Course
         </a>
       
@@ -242,7 +238,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="./" title="Note" class="md-tabs__link md-tabs__link--active">
+        <a href="../../../note/build-libc-with-debug-info/" title="Note" class="md-tabs__link">
           Note
         </a>
       
@@ -259,7 +255,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../writeup/0CTF-2018-Quals:Baby-Stack/" title="Writeup" class="md-tabs__link">
+        <a href="../../../writeup/0CTF-2018-Quals:Baby-Stack/" title="Writeup" class="md-tabs__link">
           Writeup
         </a>
       
@@ -320,7 +316,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../.." title="Home" class="md-nav__link">
+    <a href="../../.." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -330,10 +326,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Course
@@ -349,10 +347,12 @@
           
           
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1" checked>
     
     <label class="md-nav__link" for="nav-2-1">
       CSIE
@@ -370,7 +370,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../course/csie/" title="Index" class="md-nav__link">
+    <a href="../" title="Index" class="md-nav__link">
       Index
     </a>
   </li>
@@ -382,7 +382,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../course/csie/practice/" title="Practice" class="md-nav__link">
+    <a href="../practice/" title="Practice" class="md-nav__link">
       Practice
     </a>
   </li>
@@ -394,7 +394,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../course/csie/hw0/" title="Hw0" class="md-nav__link">
+    <a href="../hw0/" title="Hw0" class="md-nav__link">
       Hw0
     </a>
   </li>
@@ -406,7 +406,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../course/csie/hw1/" title="Hw1" class="md-nav__link">
+    <a href="../hw1/" title="Hw1" class="md-nav__link">
       Hw1
     </a>
   </li>
@@ -418,7 +418,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../course/csie/hw2/" title="Hw2" class="md-nav__link">
+    <a href="../hw2/" title="Hw2" class="md-nav__link">
       Hw2
     </a>
   </li>
@@ -430,7 +430,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../course/csie/hw3/" title="Hw3" class="md-nav__link">
+    <a href="../hw3/" title="Hw3" class="md-nav__link">
       Hw3
     </a>
   </li>
@@ -442,7 +442,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../course/csie/hw4/" title="Hw4" class="md-nav__link">
+    <a href="../hw4/" title="Hw4" class="md-nav__link">
       Hw4
     </a>
   </li>
@@ -452,11 +452,18 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../course/csie/hw5/" title="Hw5" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" title="Hw5" class="md-nav__link md-nav__link--active">
       Hw5
     </a>
+    
   </li>
 
         
@@ -466,7 +473,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../course/csie/hw6/" title="Hw6" class="md-nav__link">
+    <a href="../hw6/" title="Hw6" class="md-nav__link">
       Hw6
     </a>
   </li>
@@ -486,12 +493,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       Note
@@ -507,63 +512,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Build libc with debug info
-      </label>
-    
-    <a href="./" title="Build libc with debug info" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../../note/build-libc-with-debug-info/" title="Build libc with debug info" class="md-nav__link">
       Build libc with debug info
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#download-source-code" title="Download source code" class="md-nav__link">
-    Download source code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-and-build" title="Configure and build" class="md-nav__link">
-    Configure and build
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#note" title="Note" class="md-nav__link">
-    Note
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -573,7 +526,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../pwn-tips/" title="Pwn tips" class="md-nav__link">
+    <a href="../../../note/pwn-tips/" title="Pwn tips" class="md-nav__link">
       Pwn tips
     </a>
   </li>
@@ -628,7 +581,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../writeup/0CTF-2018-Quals:Baby-Stack/" title="0CTF-2018-Quals:Baby-Stack" class="md-nav__link">
+    <a href="../../../writeup/0CTF-2018-Quals:Baby-Stack/" title="0CTF-2018-Quals:Baby-Stack" class="md-nav__link">
       0CTF-2018-Quals:Baby-Stack
     </a>
   </li>
@@ -651,111 +604,17 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#download-source-code" title="Download source code" class="md-nav__link">
-    Download source code
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#configure-and-build" title="Configure and build" class="md-nav__link">
-    Configure and build
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#note" title="Note" class="md-nav__link">
-    Note
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/ss8651twtw/blog/blob/master/docs/note/build-libc-with-debug-info.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/ss8651twtw/blog/blob/master/docs/course/csie/hw5.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="build-libc-with-debug-info">Build libc with debug info</h1>
-<p>本文使用環境為 64 bit Ubuntu 16.04</p>
-<h2 id="download-source-code">Download source code</h2>
-<p>由 <a href="https://www.gnu.org/software/libc/">The GNU C Library (glibc)</a> 官方網站下載 glibc source code，以 glibc 2.23 為例</p>
-<p>下載 glibc 2.23 並解壓縮</p>
-<div class="highlight"><pre><span></span>wget https://ftp.gnu.org/gnu/libc/glibc-2.23.tar.gz
-tar zxvf glibc-2.23.tar.gz
-</pre></div>
-
-<h2 id="configure-and-build">Configure and build</h2>
-<p>進入 glibc-2.23 資料夾中並新增一個 build 的資料夾供編譯使用</p>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> glibc-2.23
-mkdir build
-</pre></div>
-
-<p>進入 build 資料夾並設定編譯參數</p>
-<ul>
-<li>CFLAGS<ul>
-<li>debug 選項全開並盡量不要做優化</li>
-<li>可參考以下範例</li>
-</ul>
-</li>
-<li>prefix<ul>
-<li>編譯完檔案所放位置</li>
-<li>範例為放置家目錄下的 glibc 資料夾內</li>
-</ul>
-</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="nb">cd</span> build
-<span class="nv">CFLAGS</span><span class="o">=</span><span class="s1">&#39;-g3 -ggdb3 -gdwarf-4 -Og -Wno-error&#39;</span> ../configure --prefix<span class="o">=</span>/home/<span class="sb">`</span>whoami<span class="sb">`</span>/glibc
-</pre></div>
-
-<p>編譯並安裝</p>
-<div class="highlight"><pre><span></span>make -j4
-make install -j4
-</pre></div>
-
-<h2 id="note">Note</h2>
-<p>編譯 32 bit 版本的 glibc</p>
-<ul>
-<li>CC<ul>
-<li>gcc -m32</li>
-</ul>
-</li>
-<li>CFLAGS<ul>
-<li>host=i686-linux-gnu</li>
-<li>build=i686-linux-gnu</li>
-</ul>
-</li>
-</ul>
-<div class="highlight"><pre><span></span><span class="nv">CC</span><span class="o">=</span><span class="s1">&#39;gcc -m32&#39;</span> <span class="nv">CFLAGS</span><span class="o">=</span><span class="s1">&#39;-g3 -ggdb3 -gdwarf-4 -Og -Wno-error --host=i686-linux-gnu --bulid=i686-linux-gnu&#39;</span> ../configure --prefix<span class="o">=</span>/home/<span class="sb">`</span>whoami<span class="sb">`</span>/glibc
-</pre></div>
+                  <h1>Hw5</h1>
+                
+                
                 
                   
                 
@@ -776,7 +635,7 @@ make install -j4
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../course/csie/hw6/" title="Hw6" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../hw4/" title="Hw4" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -785,19 +644,19 @@ make install -j4
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Hw6
+                Hw4
               </span>
             </div>
           </a>
         
         
-          <a href="../pwn-tips/" title="Pwn tips" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../hw6/" title="Hw6" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Pwn tips
+                Hw6
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -827,9 +686,9 @@ make install -j4
       
     </div>
     
-      <script src="../../assets/javascripts/application.a59e2a89.js"></script>
+      <script src="../../../assets/javascripts/application.a59e2a89.js"></script>
       
-      <script>app.initialize({version:"0.17.4",url:{base:"../.."}})</script>
+      <script>app.initialize({version:"0.17.4",url:{base:"../../.."}})</script>
       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
       
