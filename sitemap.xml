@@ -2,67 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://ss8651twtw.github.io/blog/</loc>
-     <lastmod>2018-06-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://ss8651twtw.github.io/blog/course/csie/</loc>
-     <lastmod>2018-06-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://ss8651twtw.github.io/blog/course/csie/practice/</loc>
-     <lastmod>2018-06-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://ss8651twtw.github.io/blog/course/csie/hw0/</loc>
-     <lastmod>2018-06-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://ss8651twtw.github.io/blog/course/csie/hw1/</loc>
-     <lastmod>2018-06-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://ss8651twtw.github.io/blog/course/csie/hw2/</loc>
-     <lastmod>2018-06-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://ss8651twtw.github.io/blog/course/csie/hw3/</loc>
-     <lastmod>2018-06-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://ss8651twtw.github.io/blog/course/csie/hw4/</loc>
-     <lastmod>2018-06-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://ss8651twtw.github.io/blog/course/csie/hw5/</loc>
-     <lastmod>2018-06-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://ss8651twtw.github.io/blog/course/csie/hw6/</loc>
-     <lastmod>2018-06-20</lastmod>
+     <lastmod>2018-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://ss8651twtw.github.io/blog/note/build-libc-with-debug-info/</loc>
-     <lastmod>2018-06-20</lastmod>
+     <lastmod>2018-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://ss8651twtw.github.io/blog/note/pwn-tips/</loc>
-     <lastmod>2018-06-20</lastmod>
+     <lastmod>2018-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://ss8651twtw.github.io/blog/writeup/0CTF-2018-Quals:Baby-Stack/</loc>
-     <lastmod>2018-06-20</lastmod>
+     <lastmod>2018-06-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
