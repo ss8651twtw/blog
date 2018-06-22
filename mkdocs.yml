@@ -20,7 +20,7 @@ pages:
         - Pwn tips: note/pwn-tips.md
     - Writeup:
         - 2018:
-            - 0CTF-2018-Quals:Baby-Stack: writeup/0CTF-2018-Quals:Baby-Stack.md
+            - 0CTF 2018 Quals Baby Stack: writeup/0CTF-2018-Quals:Baby-Stack.md
 
 # Theme
 theme:
