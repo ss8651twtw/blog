@@ -104,6 +104,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#hw1" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -411,10 +415,68 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Hw1
+      </label>
     
     <a href="./" title="Hw1" class="md-nav__link md-nav__link--active">
       Hw1
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hw1_1" title="hw1" class="md-nav__link">
+    hw1
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concept" title="concept" class="md-nav__link">
+    concept
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploit" title="exploit" class="md-nav__link">
+    exploit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flag" title="flag" class="md-nav__link">
+    flag
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -604,6 +666,64 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hw1_1" title="hw1" class="md-nav__link">
+    hw1
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concept" title="concept" class="md-nav__link">
+    concept
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploit" title="exploit" class="md-nav__link">
+    exploit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flag" title="flag" class="md-nav__link">
+    flag
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -612,9 +732,97 @@
                   <a href="https://github.com/ss8651twtw/blog/blob/master/docs/course/csie/hw1.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Hw1</h1>
-                
-                
+                <h1 id="hw1">Hw1</h1>
+<h2 id="hw1_1">hw1</h2>
+<h3 id="concept">concept</h3>
+<ul>
+<li>normal work<ul>
+<li>讀懂組語中加密函式的行為後便可以反向解出被加密的 flag</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="https://i.imgur.com/q3Egxm4.png" /></p>
+<ul>
+<li>dirty work<ul>
+<li>觀察到該程式是每次加密一個 byte，且每個 byte 互相獨立不影響加密計算。如此即可暴力窮舉出所有可視字元，依序破解每一個 byte</li>
+</ul>
+</li>
+</ul>
+<h3 id="exploit">exploit</h3>
+<ul>
+<li>normal work</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">from</span> <span class="nn">struct</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;flag&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span> 
+    <span class="n">data</span> <span class="o">=</span> <span class="n">fd</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">unpack</span><span class="p">(</span><span class="s1">&#39;&lt;{}i&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">/</span> <span class="mi">4</span><span class="p">),</span> <span class="n">data</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="n">idx</span><span class="p">)</span> <span class="o">*</span> <span class="mh">0xcccccccd</span>
+        <span class="n">D</span> <span class="o">=</span> <span class="n">tmp</span> <span class="o">&gt;&gt;</span> <span class="mi">32</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="n">tmp</span> <span class="o">&amp;</span> <span class="mh">0xffffffff</span>
+        <span class="n">D</span> <span class="o">&gt;&gt;=</span> <span class="mi">3</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="n">D</span> <span class="o">*</span> <span class="mi">10</span>
+        <span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="n">idx</span> <span class="o">-</span> <span class="n">A</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xff</span>
+        <span class="n">D</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span> 
+        <span class="n">D</span> <span class="o">&lt;&lt;=</span> <span class="n">C</span>
+        <span class="k">print</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">*</span> <span class="n">D</span> <span class="o">+</span> <span class="mh">0x2333</span><span class="p">)</span>
+    <span class="k">return</span>
+
+<span class="k">def</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">ans</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="n">idx</span><span class="p">)</span> <span class="o">*</span> <span class="mh">0xcccccccd</span>
+        <span class="n">D</span> <span class="o">=</span> <span class="n">tmp</span> <span class="o">&gt;&gt;</span> <span class="mi">32</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="n">tmp</span> <span class="o">&amp;</span> <span class="mh">0xffffffff</span>
+        <span class="n">D</span> <span class="o">&gt;&gt;=</span> <span class="mi">3</span>
+        <span class="n">A</span> <span class="o">=</span> <span class="n">D</span> <span class="o">*</span> <span class="mi">10</span>
+        <span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="n">idx</span> <span class="o">-</span> <span class="n">A</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xff</span>
+        <span class="n">D</span> <span class="o">=</span> <span class="n">idx</span> <span class="o">+</span> <span class="mi">1</span> 
+        <span class="n">D</span> <span class="o">&lt;&lt;=</span> <span class="n">C</span>
+        <span class="n">ans</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">((</span><span class="n">item</span> <span class="o">-</span> <span class="mh">0x2333</span><span class="p">)</span> <span class="o">/</span> <span class="n">D</span><span class="p">)</span>
+    <span class="k">print</span> <span class="n">ans</span> 
+    <span class="k">return</span>
+
+<span class="n">decrypt</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+
+<ul>
+<li>dirty work</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">string</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ans&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span> 
+    <span class="n">ans</span> <span class="o">=</span> <span class="n">fd</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">gen_ans</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;echo </span><span class="se">\&#39;</span><span class="s1">{}</span><span class="se">\&#39;</span><span class="s1"> | ./hw1 &#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;flag&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span> 
+        <span class="n">res</span> <span class="o">=</span> <span class="n">fd</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">res</span> 
+
+<span class="n">test_ans</span> <span class="o">=</span> <span class="s1">&#39;FLAG{&#39;</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">33</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">printable</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">ans</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">gen_ans</span><span class="p">(</span><span class="n">test_ans</span> <span class="o">+</span> <span class="n">i</span><span class="p">)):</span>
+            <span class="n">test_ans</span> <span class="o">+=</span> <span class="n">i</span>
+            <span class="k">break</span>
+
+<span class="k">print</span> <span class="n">test_ans</span>
+</pre></div>
+
+<h3 id="flag">flag</h3>
+<p><code>FLAG{Iost4SXskSmu53CbCAI5e52FBJkj1JKl}</code></p>
                 
                   
                 

