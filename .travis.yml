@@ -7,3 +7,7 @@ install:
     - pip install -r requirements.txt
 
 script: chmod +x deploy.sh && ./deploy.sh
+
+branches:
+    only:
+        - master
